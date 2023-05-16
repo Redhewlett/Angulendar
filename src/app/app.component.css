@@ -1,16 +1,76 @@
+h1 {
+  margin: 2rem;
+  text-align: center;
+}
 table {
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid black;
+  width: 500px;
+  height: 400px;
+  padding: 1rem;
+  margin: 0 auto;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+tbody th {
+  width: 10%;
+  color: grey;
 }
 
+tbody td {
+  font-weight: 600;
+}
+tbody td p {
+  width: 60%;
+  height: 85%;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+}
+tbody td p:hover {
+  cursor: pointer;
+  border-radius: 20%;
+  background-color: cornflowerblue;
+  color: white;
+}
 table td,
 table th {
   text-align: center;
-  border: 1px solid black;
-  padding: 5px;
 }
 
-table tr:nth-child(even) {
-  background-color: #eee;
+#month {
+  font-size: 2rem;
+  border: none;
+  position: relative;
+}
+
+#month h2 {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  color: grey;
+  transform: translateY(90%);
+  border-radius: 50%;
+  padding: 1rem;
+  border: 1px solid grey;
+}
+
+.arrow:hover {
+  cursor: pointer;
+  background-color: #f2f2f2;
+  color: black;
+}
+
+.right {
+  right: 4%;
+}
+
+.left {
+  left: 4%;
 }

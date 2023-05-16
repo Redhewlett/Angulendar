@@ -1,11 +1,22 @@
 <h1>Angular calendar</h1>
 <table>
-  <th>Days</th>
-  <th *ngFor="let day of days">{{ day }}</th>
-  <tr *ngFor="let week of calendar">
-    <td></td>
-    <td *ngFor="let d of week">
-      {{ d }}
-    </td>
-  </tr>
+  <th id="month" colspan="7">
+    <mat-icon class="arrow left" (click)="changeMonth('prev')"
+      >keyboard_arrow_left</mat-icon
+    >
+    <mat-icon class="arrow right" (click)="changeMonth('next')"
+      >keyboard_arrow_right</mat-icon
+    >
+    <h2>{{ months[month] }} {{ year }}</h2>
+  </th>
+  <tbody>
+    <th *ngFor="let day of days">{{ day }}</th>
+    <tr *ngFor="let week of calendar">
+      <td *ngFor="let d of week">
+        <p>
+          {{ d }}
+        </p>
+      </td>
+    </tr>
+  </tbody>
 </table>

@@ -8,9 +8,24 @@ import { first } from 'rxjs';
 })
 export class AppComponent {
   title = 'angular-calendar';
-  public month = 5;
+  public month = new Date().getMonth() + 1;
   public year = new Date().getFullYear();
   public calendar: Array<Array<number>> = [];
+  public months = [
+    '',
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
   public days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
   constructor() {
     this.generateCalendar();
@@ -53,5 +68,24 @@ export class AppComponent {
       calendar[i] = week;
     }
     this.calendar = calendar;
+  }
+
+  changeMonth(direction: string) {
+    if (direction === 'next') {
+      if (this.month === 12) {
+        this.month = 1;
+        this.year++;
+      } else {
+        this.month++;
+      }
+    } else {
+      if (this.month === 1) {
+        this.month = 12;
+        this.year--;
+      } else {
+        this.month--;
+      }
+    }
+    this.generateCalendar();
   }
 }
